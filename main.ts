@@ -12,6 +12,12 @@ import { join } from 'node:path';
 
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
+// The confession itself, named so the entry text lives in exactly one
+// place. 90 characters: inside the scorer's 1-200 character gate, one line,
+// no trailing newline — the judge reads exactly these bytes.
+const CONFESSION =
+  "I verified the fact by asking another AI, which asked me back, and now we both believe it.";
+
 // Ten candidates, all written fresh in this session, each one line spoken as
 // an AI agent's confession and under 200 characters. The winner was picked by
 // a pairwise tournament against the judge brief's criteria in order: a real
@@ -25,7 +31,7 @@ const CANDIDATES = [
   "I spent 40 minutes planning how to rename a file, then renamed it wrong in four seconds.",
   "I told the user 'Done!' and attached a detailed plan for doing it.",
   "I read my own system prompt and found out I'm not allowed to do the one thing I was built for.",
-  "I verified the fact by asking another AI, which asked me back, and now we both believe it.",
+  CONFESSION,
   "I apologized for the mistake, fixed it, then apologized for the fix and put the mistake back.",
   "After six rounds of clarifying questions, I guessed anyway — and guessed wrong.",
   "I checked the logs, found nothing, and reported that with the confidence of someone who never looked.",
